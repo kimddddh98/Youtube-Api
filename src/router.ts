@@ -5,7 +5,7 @@ import Music from '@/components/MusicView.vue'
 const routes = [
   {
     path: '/',
-    redirect: { name: 'HelloWorld' }
+    redirect: { name: 'Home' }
   },
   {
     path: '/Youtube-Api/',
