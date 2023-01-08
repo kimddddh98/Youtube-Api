@@ -1,0 +1,535 @@
+<template>
+    <div>
+        <div id="wrap">
+        <header>
+
+            <div id="logo"><a href="#">
+                    <img src="@/assets/img/main/logo_transparent.png" alt="logo">
+                </a></div>
+            <ul id="mainmenu">
+                <li><a href="#">인기차트</a>
+                    <ul class="sub">
+                        <li><a href="#">곡</a></li>
+                        <li><a href="#">앨범</a></li>
+                        <li><a href="#">영상</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">최신음악</a>
+                    <ul class="sub">
+                        <li><a href="#">곡</a></li>
+                        <li><a href="#">앨범</a></li>
+                        <li><a href="#">영상</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">장르음악</a>
+                    <ul class="sub">
+                        <li><a href="#">발라드</a></li>
+                        <li><a href="#">댄스/팝</a></li>
+                        <li><a href="#">랩/힙합</a></li>
+                        <li><a href="#">일레트로닉</a></li>
+                        <li><a href="#">인디</a></li>
+                    </ul>
+                </li>
+                <li><a href="sub.html">뮤직 테마</a>
+                    <ul class="sub">
+                        <li><a href="sub.html">추천 앨범</a></li>
+                        <li><a href="sub.html">추천 M/V</a></li>
+                        <li><a href="sub.html">오늘 뭐 듣지?</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">TV</a>
+                    <ul class="sub">
+                        <li><a href="#">뮤직비디오</a></li>
+                        <li><a href="#">추천영상</a></li>
+                        <li><a href="#">방송</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <div id="search">
+                <div id="click_search"></div>
+                <div id="click_menu"></div>
+            </div>
+        </header>
+        <ul id="mini">
+            <li><a href="#">인기차트</a>
+                <ul class="mini_sub">
+                    <li><a href="#">곡</a></li>
+                    <li><a href="#">앨범</a></li>
+                    <li><a href="#">영상</a></li>
+                </ul>
+            </li>
+            <li><a href="#">최신음악</a>
+                <ul class="mini_sub">
+                    <li><a href="#">곡</a></li>
+                    <li><a href="#">앨범</a></li>
+                    <li><a href="#">영상</a></li>
+                </ul>
+            </li>
+            <li><a href="#">장르음악</a>
+                <ul class="mini_sub">
+                    <li><a href="#">발라드</a></li>
+                    <li><a href="#">댄스/팝</a></li>
+                    <li><a href="#">랩/힙합</a></li>
+                    <li><a href="#">일레트로닉</a></li>
+                    <li><a href="#">인디</a></li>
+                </ul>
+            </li>
+            <li><a href="#">뮤직 테마</a>
+                <ul class="mini_sub">
+                    <li><a href="sub.html">추천 앨범</a></li>
+                    <li><a href="sub.html">추천 M/V</a></li>
+                    <li><a href="sub.html">오늘 뭐 듣지?
+
+                        </a></li>
+                </ul>
+            </li>
+            <li><a href="#">TV</a>
+                <ul class="mini_sub">
+                    <li><a href="#">뮤직비디오</a></li>
+                    <li><a href="#">추천영상</a></li>
+                    <li><a href="#">방송</a></li>
+                </ul>
+            </li>
+        </ul>
+        <div id="down">
+            <div>
+                <input type="text" value="Search" placeholder="Search">
+                <div></div>
+
+            </div>
+        </div>
+
+        <div id="sound">
+            <!-- <video src="@/assets/img/main/teaser2.mp4" muted playsinline id="video1" onloadeddata="loadVideo()"></video>
+
+            <video src="@/assets/img/main/teaser.mp4" playsinline muted id="video2"></video> -->
+            <!-- <iframe
+            id="ytplayer"
+            type="text/html"
+            :src="state.chart[0].id"
+            frameborder="0"
+            ></iframe> -->
+            <div id="control">
+                <div><img src="@/assets/img/main/careers-arrow(1).svg" id="prev" alt="arrow"></div>
+                <div><img id='next' src="@/assets/img/main/careers-arrow.svg" alt="arrow"></div>
+            </div>
+            <div id="sound_box">
+                <div id="sound_text">
+                    <div id="line">
+                        <p>
+                            <!-- {{state.chart[0].title}} -->
+                        </p>
+                        <p>
+                            -album title
+                        </p>
+                        <div id="after"></div>
+                        <div class="go"><img src="@/assets/img/main/stop.png" alt="stop"></div>
+
+                        <div class="go"><img src="@/assets/img/main/go.png" alt="go"></div>
+
+                    </div>
+                    <div id="maincover"><img src="@/assets/img/main/videocover2.jpg" alt="cover"></div>
+                </div>
+                <div id="sound_index">
+                    <div><span>1</span>/<span>2</span></div>
+                </div>
+            </div>
+        </div>
+        <div id="full">
+            <div>
+                <div></div>
+                <p>최신음악</p>
+            </div>
+            <div>
+                <div></div>
+                <p>인기음악</p>
+            </div>
+            <div>
+                <div></div>
+                <p>해외음악</p>
+            </div>
+        </div>
+        <div id="container">
+            <div id="container_m">
+                <div>
+                    <p>실시간 차트</p>
+                </div>
+                <div>
+                    <p>일간 차트</p>
+                </div>
+                <div>
+                    <p>주간 차트</p>
+                </div>
+                <div>
+                    <p>월간 차트</p>
+                </div>
+            </div>
+            <div id="container_c">
+                <div class="fadein">
+                    <div class="slider">
+                        <div class="sc">
+                            <ul>
+                                <li class="item1">
+                                    <img src="@/assets/img/main/chart4.jpg" alt="4">
+                                    <p class="txt">title1</p>
+                                </li>
+                                <li class="item2">
+                                    <img src="@/assets/img/main/chart5.jpg" alt="5">
+
+                                    <p class="txt">title2</p>
+                                </li>
+                                <li class="item3">
+                                    <img src="@/assets/img/main/chart1.jpg" alt="1">
+
+                                    <p class="txt">title3</p>
+                                </li>
+                                <li class="item4">
+                                    <img src="@/assets/img/main/chart2.jpg" alt="2">
+                                    <p class="txt">title4</p>
+                                </li>
+                                <li class="item5">
+                                    <img src="@/assets/img/main/chart3.jpg" alt="3">
+                                    <p class="txt">title5</p>
+                                </li>
+                            </ul>
+                            <div>
+                                <button type="button" class="prev">Prev</button>
+                                <button type="button" class="next">Next</button>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="chart">
+                        <p>
+                            <span class="year">2022</span>.
+                            <span class="month">06</span>.
+                            <span class="date">16</span>.
+                            <span class="time">17:00</span>
+                        </p>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>순위</th>
+                                    <th colspan="2" id="t_col">제목</th>
+                                    <th>아티스트</th>
+                                    <th>앨범</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr v-for="(item, index) in state.chart" :key="index">
+                                    <td>{{index+1}}</td>
+                                    <td><img :src="item.thumbnails" alt=""></td>
+                                    <td class="title">{{item.title}}</td>
+                                    <td class="artist">ㅇㅇㅇ</td>
+                                    <td class="album">ㅇㅇㅇ</td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="fadein">
+                    <div class="slider">
+                        <div class="sc">
+                            <ul>
+                                <li class="item1">
+                                    <img src="@/assets/img/main/cover.jpg" alt="4">
+                                    <p class="txt">title1</p>
+                                </li>
+                                <li class="item2">
+                                    <img src="@/assets/img/main/cover2.jpg" alt="5">
+
+                                    <p class="txt">title2</p>
+                                </li>
+                                <li class="item3">
+                                    <img src="@/assets/img/main/cover1.jpg" alt="1">
+
+                                    <p class="txt">title3</p>
+                                </li>
+                                <li class="item4">
+                                    <img src="@/assets/img/main/theme4.jpg" alt="2">
+                                    <p class="txt">title4</p>
+                                </li>
+                                <li class="item5">
+                                    <img src="@/assets/img/main/cover3.jpg" alt="3">
+                                    <p class="txt">title5</p>
+                                </li>
+                            </ul>
+                            <div>
+                                <button type="button" class="prev">Prev</button>
+                                <button type="button" class="next">Next</button>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="chart">
+                        <p>
+                            <span class="year">2022</span>.
+                            <span class="month">06</span>.
+                            <span class="date">16</span>
+
+                        </p>
+                    </div>
+
+                </div>
+                <div class="fadein">
+                    <div class="slider">
+                        <div class="sc">
+                            <ul>
+                                <li class="item1">
+                                    <img src="@/assets/img/main/cover.jpg" alt="4">
+                                    <p class="txt">title1</p>
+                                </li>
+                                <li class="item2">
+                                    <img src="@/assets/img/main/cover2.jpg" alt="5">
+
+                                    <p class="txt">title2</p>
+                                </li>
+                                <li class="item3">
+                                    <img src="@/assets/img/main/cover1.jpg" alt="1">
+
+                                    <p class="txt">title3</p>
+                                </li>
+                                <li class="item4">
+                                    <img src="@/assets/img/main/theme4.jpg" alt="2">
+                                    <p class="txt">title4</p>
+                                </li>
+                                <li class="item5">
+                                    <img src="@/assets/img/main/cover3.jpg" alt="3">
+                                    <p class="txt">title5</p>
+                                </li>
+                            </ul>
+                            <div>
+                                <button type="button" class="prev">Prev</button>
+                                <button type="button" class="next">Next</button>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="chart">
+                        <p>
+                            <span class="year">2022</span>.
+                            <span class="month">06</span>.
+                            <span class="date">16</span>
+
+                        </p>
+                    </div>
+
+                </div>
+                <div class="fadein">
+                    <div class="slider">
+                        <div class="sc">
+                            <ul>
+                                <li class="item1">
+                                    <img src="@/assets/img/main/cover.jpg" alt="4">
+                                    <p class="txt">title1</p>
+                                </li>
+                                <li class="item2">
+                                    <img src="@/assets/img/main/cover2.jpg" alt="5">
+                                    <p class="txt">title2</p>
+                                </li>
+                                <li class="item3">
+                                    <img src="@/assets/img/main/cover1.jpg" alt="1">
+
+                                    <p class="txt">title3</p>
+                                </li>
+                                <li class="item4">
+                                    <img src="@/assets/img/main/theme4.jpg" alt="2">
+                                    <p class="txt">title4</p>
+                                </li>
+                                <li class="item5">
+                                    <img src="@/assets/img/main/cover3.jpg" alt="3">
+                                    <p class="txt">title5</p>
+                                </li>
+                            </ul>
+                            <div>
+                                <button type="button" class="prev">Prev</button>
+                                <button type="button" class="next">Next</button>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="chart">
+                        <p>
+                            <span class="year">2022</span>.
+                            <span class="month">06</span>월
+                            <!-- <span class="date">16</span> -->
+
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div id="story">
+            <div id="story_con">
+                <div class="con_one">
+                    <div class="first">
+                        <p> <a href="sub.html">
+                                &nbsp; 뭘 들을까?<br> - 2022년 6월 노래 모음
+                            </a></p>
+                    </div>
+                    <div class="second">
+                        <p><a href="sub.html">
+                                &nbsp; 추천장르<br> - 당신을 위한 장르의 모든 것
+                            </a></p>
+                    </div>
+                </div>
+                <div class="con_two">
+                    <div class="first">
+                        <p> <a href="sub.html">
+                                &nbsp; 추천테마<br> - 당신을 위한 추천앨범
+                            </a></p>
+
+                    </div>
+                    <div class="second">
+                        <p> <a href="sub.html">
+                                &nbsp; 뭘 들을까?<br> - 2022년 5월 노래 모음
+                            </a></p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="pd">
+            <div>
+                <div id='pd_bg'>
+                    <div id="change"><img src="@/assets/img/main/maincover.jpg" alt="cover"></div>
+                    <p>비트에 몸을 맡겨 보자 국내 힙합</p>
+                    <div id="button_box">
+                        <div id="pd_prev">
+                            <div>
+                                <img src="@/assets/img/main/pd3.jpg" alt="잔잔하게 어지럽히는 감성 힙합">
+                            </div>
+                            <div class="c2">
+                                <img src="@/assets/img/main/pd1.jpg" alt="애절한 감성 발라드 드라마 OST">
+                            </div>
+                            <div>
+                                <img src="@/assets/img/main/maincover.jpg" alt="비트에 몸을 맡겨 보자 국내 힙합">
+                            </div>
+                            <div class="c4">
+                                <img src="@/assets/img/main/pd4.jpg" alt="빗소리와 잘 어울리는 감성 팝">
+                            </div>
+                            <div>
+                                <img src="@/assets/img/main/cover2.jpg" alt="리드미컬하고 트렌디한 팝 LIST">
+                            </div>
+                            <span>Prev</span>
+                            <span>Next</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <footer>
+            <div id="footer_box">
+                <div id="box1">
+                    <div>
+                        <a href="#">
+                            <img src="@/assets/img/main/logo_transparent.png" alt="foot_logo">
+                        </a>
+
+                    </div>
+                </div>
+                <div id="box2">
+                    <ul>
+                        <li><a href="#">회사소개</a></li>
+                        <li><a href="#">이용약관</a></li>
+                        <li><a href="#">개인정보처리방침</a></li>
+                        <li><a href="#">고객센터</a></li>
+                        <li><a href="#">사이트맵</a></li>
+                    </ul>
+                    <div>
+                        <p>경기도 안산시 단원구 고잔2길 코스모프라자 6층</p>
+                        <p>고객센터 : 1566-1234</p>
+                        <p>이메일 : abcdefg@gmail.com</p>
+                    </div>
+
+                </div>
+                <div id="box3">
+                    <a href="#"></a>
+                    <a href="#"></a>
+                    <a href="#"></a>
+                </div>
+            </div>
+        </footer>
+        <svg id="svg" class="stroke">
+            <path stroke="#bf611b"
+                d="M -0 5000 L -1 0 C 16.3 0, 146.7 -129, 163 -129 C 179.3 -129, 309.7 129, 326 129 C 342.3 129, 472.7 -129, 489 -129 C 505.3 -129, 635.7 129, 652 129 C 668.3 129, 798.7 -129, 815 -129 C 831.3 -129, 961.7 129, 978 129 C 994.3 129, 1124.7 -129, 1141 -129 C 1157.3 -129, 1287.7 129, 1304 129 C 1320.3 129, 1450.7 -129, 1467 -129 C 1483.3 -129, 1613.7 129, 1630 129 C 1646.3 129, 1776.7 -129, 1793 -129 C 1809.3 -129, 1939.7 129, 1956 129 ">
+            </path>
+            <path stroke="#c2522d"
+                d="M -0 5000 L -1 91 C 16.3 91, 146.7 -38, 163 -38 C 179.3 -38, 309.7 220, 326 220 C 342.3 220, 472.7 -38, 489 -38 C 505.3 -38, 635.7 220, 652 220 C 668.3 220, 798.7 -38, 815 -38 C 831.3 -38, 961.7 220, 978 220 C 994.3 220, 1124.7 -38, 1141 -38 C 1157.3 -38, 1287.7 220, 1304 220 C 1320.3 220, 1450.7 -38, 1467 -38 C 1483.3 -38, 1613.7 220, 1630 220 C 1646.3 220, 1776.7 -38, 1793 -38 C 1809.3 -38, 1939.7 220, 1956 220  ">
+            </path>
+            <path stroke="#c1433e"
+                d="M -0 5000 L -1 183 C 16.3 183, 146.7 54, 163 54 C 179.3 54, 309.7 312, 326 312 C 342.3 312, 472.7 54, 489 54 C 505.3 54, 635.7 312, 652 312 C 668.3 312, 798.7 54, 815 54 C 831.3 54, 961.7 312, 978 312 C 994.3 312, 1124.7 54, 1141 54 C 1157.3 54, 1287.7 312, 1304 312 C 1320.3 312, 1450.7 54, 1467 54 C 1483.3 54, 1613.7 312, 1630 312 C 1646.3 312, 1776.7 54, 1793 54 C 1809.3 54, 1939.7 312, 1956 312  ">
+            </path>
+            <path stroke="#bb384d"
+                d="M -0 5000 L -1 274 C 16.3 274, 146.7 145, 163 145 C 179.3 145, 309.7 403, 326 403 C 342.3 403, 472.7 145, 489 145 C 505.3 145, 635.7 403, 652 403 C 668.3 403, 798.7 145, 815 145 C 831.3 145, 961.7 403, 978 403 C 994.3 403, 1124.7 145, 1141 145 C 1157.3 145, 1287.7 403, 1304 403 C 1320.3 403, 1450.7 145, 1467 145 C 1483.3 145, 1613.7 403, 1630 403 C 1646.3 403, 1776.7 145, 1793 145 C 1809.3 145, 1939.7 403, 1956 403 ">
+            </path>
+            <path stroke="#b1315b"
+                d="M -0 5000 L -1 366 C 16.3 366, 146.7 237, 163 237 C 179.3 237, 309.7 495, 326 495 C 342.3 495, 472.7 237, 489 237 C 505.3 237, 635.7 495, 652 495 C 668.3 495, 798.7 237, 815 237 C 831.3 237, 961.7 495, 978 495 C 994.3 495, 1124.7 237, 1141 237 C 1157.3 237, 1287.7 495, 1304 495 C 1320.3 495, 1450.7 237, 1467 237 C 1483.3 237, 1613.7 495, 1630 495 C 1646.3 495, 1776.7 237, 1793 237 C 1809.3 237, 1939.7 495, 1956 495">
+            </path>
+            <path stroke="#a22f68"
+                d="M -0 5000 L -1 457 C 16.3 457, 146.7 328, 163 328 C 179.3 328, 309.7 586, 326 586 C 342.3 586, 472.7 328, 489 328 C 505.3 328, 635.7 586, 652 586 C 668.3 586, 798.7 328, 815 328 C 831.3 328, 961.7 586, 978 586 C 994.3 586, 1124.7 328, 1141 328 C 1157.3 328, 1287.7 586, 1304 586 C 1320.3 586, 1450.7 328, 1467 328 C 1483.3 328, 1613.7 586, 1630 586 C 1646.3 586, 1776.7 328, 1793 328 C 1809.3 328, 1939.7 586, 1956 586 ">
+            </path>
+            <path stroke="#903173"
+                d="M -0 5000 L -1 549 C 16.3 549, 146.7 420, 163 420 C 179.3 420, 309.7 678, 326 678 C 342.3 678, 472.7 420, 489 420 C 505.3 420, 635.7 678, 652 678 C 668.3 678, 798.7 420, 815 420 C 831.3 420, 961.7 678, 978 678 C 994.3 678, 1124.7 420, 1141 420 C 1157.3 420, 1287.7 678, 1304 678 C 1320.3 678, 1450.7 420, 1467 420 C 1483.3 420, 1613.7 678, 1630 678 C 1646.3 678, 1776.7 420, 1793 420 C 1809.3 420, 1939.7 678, 1956 678  ">
+            </path>
+            <path stroke="#7a347b"
+                d="M -0 5000 L -1 640 C 16.3 640, 146.7 511, 163 511 C 179.3 511, 309.7 769, 326 769 C 342.3 769, 472.7 511, 489 511 C 505.3 511, 635.7 769, 652 769 C 668.3 769, 798.7 511, 815 511 C 831.3 511, 961.7 769, 978 769 C 994.3 769, 1124.7 511, 1141 511 C 1157.3 511, 1287.7 769, 1304 769 C 1320.3 769, 1450.7 511, 1467 511 C 1483.3 511, 1613.7 769, 1630 769 C 1646.3 769, 1776.7 511, 1793 511 C 1809.3 511, 1939.7 769, 1956 769 ">
+            </path>
+            <path stroke="#61387f"
+                d="M -0 5000 L -1 732 C 16.3 732, 146.7 603, 163 603 C 179.3 603, 309.7 861, 326 861 C 342.3 861, 472.7 603, 489 603 C 505.3 603, 635.7 861, 652 861 C 668.3 861, 798.7 603, 815 603 C 831.3 603, 961.7 861, 978 861 C 994.3 861, 1124.7 603, 1141 603 C 1157.3 603, 1287.7 861, 1304 861 C 1320.3 861, 1450.7 603, 1467 603 C 1483.3 603, 1613.7 861, 1630 861 C 1646.3 861, 1776.7 603, 1793 603 C 1809.3 603, 1939.7 861, 1956 861  ">
+            </path>
+            <path stroke="#433b80"
+                d="M -0 5000 L -1 823 C 16.3 823, 146.7 694, 163 694 C 179.3 694, 309.7 952, 326 952 C 342.3 952, 472.7 694, 489 694 C 505.3 694, 635.7 952, 652 952 C 668.3 952, 798.7 694, 815 694 C 831.3 694, 961.7 952, 978 952 C 994.3 952, 1124.7 694, 1141 694 C 1157.3 694, 1287.7 952, 1304 952 C 1320.3 952, 1450.7 694, 1467 694 C 1483.3 694, 1613.7 952, 1630 952 C 1646.3 952, 1776.7 694, 1793 694 C 1809.3 694, 1939.7 952, 1956 952  ">
+            </path>
+            <path stroke="#1c3c7d"
+                d="M -0 5000 L -1 915 C 16.3 915, 146.7 786, 163 786 C 179.3 786, 309.7 1044, 326 1044 C 342.3 1044, 472.7 786, 489 786 C 505.3 786, 635.7 1044, 652 1044 C 668.3 1044, 798.7 786, 815 786 C 831.3 786, 961.7 1044, 978 1044 C 994.3 1044, 1124.7 786, 1141 786 C 1157.3 786, 1287.7 1044, 1304 1044 C 1320.3 1044, 1450.7 786, 1467 786 C 1483.3 786, 1613.7 1044, 1630 1044 C 1646.3 1044, 1776.7 786, 1793 786 C 1809.3 786, 1939.7 1044, 1956 1044 ">
+            </path>
+        </svg>
+    </div>
+    </div>
+</template>
+<script setup lang="ts">
+import {  reactive, defineProps, onMounted } from 'vue';
+import axios from 'axios'
+
+const props = defineProps({
+  msg:String
+})
+props
+
+const state = reactive<{
+  testId:string
+  chart:Youtube[]
+}>
+({
+  testId:'asd',
+  chart:[]
+})
+
+interface Youtube{
+  id:string,
+  title:string,
+  thumbnails:string
+}
+onMounted(()=>{
+  axios.get('https://www.googleapis.com/youtube/v3/playlistItems?playlistId=PL4fGSI1pDJn6jXS_Tv_N9B8Z0HTRVJE0m&part=snippet&maxResults=5&key=AIzaSyDhHWMON8oifUhQdsbG-EFjhBQO5KDztL8')
+                    .then(res=>{
+                        if(res.data.items){
+                          res.data.items.forEach((e:any) => {
+                            state.chart.push({
+                              thumbnails:e.snippet.thumbnails.default.url, 
+                              title:e.snippet.title, 
+                              id:'https://www.youtube.com/embed/'+e.snippet.resourceId.videoId})
+                          });
+                        }
+                        
+                    })
+})
+console.log(state.chart)
+</script>

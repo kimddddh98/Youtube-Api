@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <div>
+        <div id="app">
+            <!-- <button @click="getdata()">click</button> -->
+            <div v-for="(item,index) in chart" :key="index">
+                <img :src="item.thumbnails" :alt="index">
+                <p>{{item.title}}</p>
+                <iframe :src="item.id" frameborder="0"></iframe>
+            </div>
+        </div>
+    
+    </div>
+    <script>
+        new Vue({
+            el:'#app',
+            data:{
+                chart:[
+                    {thumbnails:null,title:null,id:null},
+                    {thumbnails:null,title:null,id:null},
+                    {thumbnails:null,title:null,id:null},
+                    {thumbnails:null,title:null,id:null},
+                    {thumbnails:null,title:null,id:null}
+                ],
+
+                
+            },
+            mounted:function(){
+                    axios.get('https://www.googleapis.com/youtube/v3/playlistItems?playlistId=PL4fGSI1pDJn6jXS_Tv_N9B8Z0HTRVJE0m&part=snippet&maxResults=5&key=AIzaSyDhHWMON8oifUhQdsbG-EFjhBQO5KDztL8')
+                    // https://music.youtube.com/playlist?list=PL4fGSI1pDJn6jXS_Tv_N9B8Z0HTRVJE0m&feature=share
+                    // .then(res=>{console.log(res.data.items)})
+                    .then(res=>{
+                        for(let i=0;i<5;i++){
+                            this.chart[i].thumbnails=res.data.items[i].snippet.thumbnails.default.url;
+                            this.chart[i].title=res.data.items[i].snippet.title;
+                            this.chart[i].id='https://www.youtube.com/embed/'+res.data.items[i].snippet.resourceId.videoId;
+                        }
+                        console.log(res)
+                    })
+                }
+            
+        })
+        // let a=[10,20,30,40,50]
+        // let result1=a.filter((item)=>item>30)
+        // // console.log(result)
+        // let result2 = a.map(item => { a.push(item); return item + item })
+        //     console.log(result2.sort((a, b) => b - a))
+        //     document.getElementById('app').innerHTML = result1
+        //     let lang = [
+        //         { name: "Typescript", level: 5 },
+        //         { name: "Javascript", level: 5 },
+        //         { name: "Scala", level: 5 },
+        //         { name: "F#", level: 5 },
+        //         { name: "Java", level: 5 },
+        //         { name: "Apple", level: 5 },
+        //         { name: "C++", level: 5 },
+        //     ];
+        //     let b=[...lang,1]
+        //     console.log(Object.values(lang[0]))
+        //     console.log(lang.sort((a,b)=>a.name.localeCompare(b.name)))
+    </script>
+</body>
+</html>
